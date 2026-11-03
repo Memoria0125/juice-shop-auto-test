@@ -1,0 +1,13 @@
+import pytest
+import requests
+
+BASE_URL = "http://127.0.0.1:3000/rest"
+
+@pytest.fixture(scope="module")
+def get_token():
+    """登录获取token，鉴权请求头，给需要登录的用例复用"""
+    login_data = {"email": "admin@juice-sh.op", "password": "admin123"}
+    resp = requests.post(f"{BASE_URL}/user/login", json=login_data)
+    token = resp.json()["authentication"]["token"]
+    headers = {"Authorization": f"Bearer {token}"}
+    return headers

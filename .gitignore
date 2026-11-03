@@ -1,0 +1,12 @@
+# 编辑器缓存
+.idea/
+.vscode/
+*.iml
+
+# pytest报告
+allure-results/
+allure-report/
+
+# python缓存
+__pycache__/
+*.pyc
