@@ -10,3 +10,8 @@ allure-report/
 # python缓存
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# 本地配置与测试结果
+.env
+test-results/
